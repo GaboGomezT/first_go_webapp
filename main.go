@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -24,7 +25,13 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "message")
 }
 
+func sendHandler(w http.ResponseWriter, r *http.Request) {
+	body := r.FormValue("body")
+	fmt.Println("Recieved message", body)
+}
+
 func main() {
 	http.HandleFunc("/", viewHandler)
+	http.HandleFunc("/send", sendHandler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

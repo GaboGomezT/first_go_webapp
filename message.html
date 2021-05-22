@@ -14,11 +14,11 @@
     
     <div style="width: 500px; margin: auto;">
       <h3>Escribe un mensaje al universo</h3>
-      <form action="">
+      <form action="/send" method="POST">
         <div class="input-group">
-          <textarea class="form-control" aria-label="With textarea" placeholder="¿Qué me quieres decir?"></textarea>
+          <textarea name="body" class="form-control" aria-label="With textarea" placeholder="¿Qué me quieres decir?"></textarea>
         </div>
-        <input class="btn btn-primary" type="button" value="Enviar" style="margin-top: 10px;">      
+        <input class="btn btn-primary" type="submit" value="Enviar" style="margin-top: 10px;">      
       </form>
     </div>
 
